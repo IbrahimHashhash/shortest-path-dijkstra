@@ -53,6 +53,7 @@ if (newDistance < neighborEntry.weight) {
     neighborEntry.weight = newDistance;
     neighborEntry.previousVertex = currentVertex;
 }
+```
 
 ![image](https://github.com/user-attachments/assets/e6ef15ca-39c7-4611-a8ff-11d9ca7cdf60)
 ![image](https://github.com/user-attachments/assets/eb78518e-3423-4f09-ad3a-7fbdae6906da)
