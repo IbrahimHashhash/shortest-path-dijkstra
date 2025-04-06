@@ -1,0 +1,50 @@
+.button {
+-fx-border-radius: 25px;
+-fx-background-radius: 25px;
+-fx-border-color: black;
+-fx-background-color: rgba(227,247,255,255);
+
+}
+.combo-box {
+-fx-border-radius: 25px;
+-fx-background-radius: 25px;
+-fx-border-color: black;
+-fx-background-color: rgba(227,247,255,255);
+
+}
+.text-field {
+-fx-border-radius: 25px;
+-fx-background-radius: 25px;
+-fx-border-color: black;
+-fx-background-color: rgba(227,247,255,255);
+}
+.text-area {
+    -fx-border-radius: 25px;
+    -fx-border-color: black;
+    -fx-background-radius: 25px;
+    -fx-background-color: rgba(227, 247, 255, 1);
+    -fx-padding: 10px;
+    -fx-pref-height: 100px;  /* Set a fixed height for the TextArea */
+    -fx-max-height: 200px;  /* Set a maximum height to constrain size */
+    -fx-min-height: 50px;   /* Optional: Set a minimum height */
+    -fx-text-fill: black;   /* Optional: Set text color */
+}
+
+.text-area .content {
+    -fx-background-radius: 25px;
+    -fx-background-color: rgba(227, 247, 255, 1);
+}
+
+.button: hover {
+-fx-opacity: 0.7;
+}
+.button: pressed {
+-fx-opacity: 0.4;
+}
+.combo-box: pressed {
+-fx-opacity: 0.4;
+}
+
+.combo-box: hover {
+-fx-opacity: 0.7;
+}

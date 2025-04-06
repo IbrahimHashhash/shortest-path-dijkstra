@@ -1,0 +1,48 @@
+    public void drawLine(CityNode src, CityNode dest) {
+        // Calculate screen coordinates for the cities
+        double x1 = convertLongitudeToX(src.getLongitude());
+        double y1 = convertLatitudeToY(src.getLatitude());
+        double x2 = convertLongitudeToX(dest.getLongitude());
+        double y2 = convertLatitudeToY(dest.getLatitude());
+
+        // Create the line representing the connection
+        Line line = new Line();
+        line.setStartX(x1);
+        line.setStartY(y1);
+        line.setEndX(x2);
+        line.setEndY(y2);
+
+        // Style the line
+        line.setStroke(Color.BLUE); // Line color
+        line.setStrokeWidth(3);     // Line thickness
+
+        // Calculate the geographic distance using the Haversine formula
+        double distance = calculateHaversineDistance(src.getLatitude(), src.getLongitude(),
+                dest.getLatitude(), dest.getLongitude());
+        System.out.println("Distance between cities: " + distance + " km");
+
+        // Add the line to the map
+        this.getChildren().add(line);
+    }
+
+    // Helper method to calculate the Haversine distance
+    private double calculateHaversineDistance(double lat1, double lon1, double lat2, double lon2) {
+        // Convert latitude and longitude to radians
+        lat1 = Math.toRadians(lat1);
+        lon1 = Math.toRadians(lon1);
+        lat2 = Math.toRadians(lat2);
+        lon2 = Math.toRadians(lon2);
+
+        // Haversine formula
+        double dlon = lon2 - lon1;
+        double dlat = lat2 - lat1;
+        double a = Math.sin(dlat / 2) * Math.sin(dlat / 2) +
+                Math.cos(lat1) * Math.cos(lat2) *
+                        Math.sin(dlon / 2) * Math.sin(dlon / 2);
+        double c = 2 * Math.asin(Math.sqrt(a));
+
+        // Radius of Earth in kilometers
+        final double R = 6371;
+
+        return c * R;
+    }

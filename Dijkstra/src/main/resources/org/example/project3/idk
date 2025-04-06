@@ -1,0 +1,63 @@
+ /*
+    private int vertices; // Number of vertices
+    private LinkedList<Edge>[] adjList; // Array of lists to store edges
+    private HashMap<String, Integer> cityToIndex; // Maps city names to indices
+    private HashMap<Integer, String> indexToCity; // Maps indices back to city names
+
+    // Edge class to store destination vertex and weight
+    static class Edge {
+        int dest; // Destination vertex
+        int weight; // Weight of the edge
+
+        Edge(int dest, int weight) {
+            this.dest = dest;
+            this.weight = weight;
+        }
+
+        @Override
+        public String toString() {
+            return "(" + dest + ", " + weight + ")";
+        }
+    }
+
+    // Constructor
+    public Graph() {
+        this.vertices = 0; // Start with 0 vertices
+        cityToIndex = new HashMap<>(vertices);
+        indexToCity = new HashMap<>(vertices);
+    }
+
+    // Add a city to the graph
+    public void addCity(String city) {
+        if (!cityToIndex.containsKey(city)) {
+            cityToIndex.put(city, vertices);
+            indexToCity.put(vertices, city);
+            vertices++;
+
+            // Resize the adjacency list
+            if (adjList == null) {
+                adjList = new LinkedList[ vertices ];
+            } else if (vertices > adjList.length) {
+                adjList = Arrays.copyOf(adjList, vertices);
+            }
+
+            adjList[ vertices - 1 ] = new LinkedList<>();
+        }
+    }
+
+    // Add an edge between two cities
+    public void addEdge(String city1, String city2, int weight) {
+        addCity(city1); // Ensure city1 is in the graph
+        addCity(city2); // Ensure city2 is in the graph
+
+        int src = cityToIndex.get(city1);
+        int dest = cityToIndex.get(city2);
+
+        adjList[ src ].addLast(new Edge(dest, weight));
+        // Uncomment the next line for undirected graph:
+        // adjList[dest].add(new Edge(src, weight));
+    }
+
+    // Display the gaph
+
+     */
