@@ -1,4 +1,4 @@
-# ✈️ Flight Route Visualizer
+# ✈️ Shortest Path Dijkstra
 
 A JavaFX application that visualizes the shortest flight route between capital cities using Dijkstra’s algorithm. The app provides users with optimal paths based on time, cost, or distance, presented with a clean and visually appealing UI designed using CSS.
 
